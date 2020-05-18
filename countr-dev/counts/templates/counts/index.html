@@ -1,0 +1,9 @@
+{% if latest %}
+    <ul>
+    {% for counter in latest %}
+        <li><a href="{% url 'counts:detail' counter.id %}">{{ counter.label }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No counters are available.</p>
+{% endif %}
